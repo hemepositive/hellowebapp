@@ -1,0 +1,11 @@
+{% extends 'layouts/base.html' %}
+{% block title %}Homepage - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+  <h1><small>Here is a list of Things</small></h1>
+      {% for thing in things %}
+        <h3><a href="{% url 'thing_detail' slug=thing.slug %}">{{ thing.name }}</a></h3>
+        <p>{{ thing.description }}</p>
+    {% endfor %}
+{% endblock %}

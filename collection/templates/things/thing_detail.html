@@ -1,0 +1,13 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+  {{ thing.name }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+  <h1><small>More details about that Thing.</small></h1>
+    	<h1>{{ thing.name }}</h1>
+      <p>{{ thing.description }}</p>
+      <br>
+      <a href="{% url 'edit_thing' slug=thing.slug %}">EDIT</a>
+{% endblock %}
